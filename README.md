@@ -1,4 +1,4 @@
-## CRM Application Version 2
+## CRM Application Final Version 3
 
 A simple **Customer Relationship Management (CRM)** application built using **ColdFusion** and **MySQL**.  
 This project was developed as a practice project to understand **CRUD operations, AJAX integration, and session handling** in a real-world style application.
@@ -20,95 +20,18 @@ This project was developed as a practice project to understand **CRUD operations
 - **Frontend:** HTML, CSS, JavaScript, jQuery (AJAX)
 - **Database:** MySQL
 
-Features in This Version
-Code reorganized into modular folders.
-Separation of CSS, JS, and CFM files for clarity.
-Common layouts (header.cfm, footer.cfm) added for reusability.
-
-## Folder Structure
-CRMv2/
-├── application.cfc                # Application-level configuration
-│
-├── components/                    # Reusable components
-│   └── customerservice.cfc
-│
-├── includes/                      # Shared layouts
-│   ├── header.cfm
-│   └── footer.cfm
-│
-├── pages/                         # Application modules
-│   ├── activitylogs/
-│   │   ├── logs.cfm
-│   │   └── logs.css
-│   │
-│   ├── customer management/
-│   │   ├── customer_report/
-│   │   │   └── customer_report.cfm
-│   │   │
-│   │   ├── customers/
-│   │   │   ├── customers.cfm
-│   │   │   ├── customers.css
-│   │   │   └── customers.js
-│   │   │
-│   │   └── scheduletask_mails/
-│   │       ├── daily_customer_report.cfm
-│   │       ├── sendmail.cfm
-│   │       └── sendmail.js
-│   │
-│   ├── forgot password/
-│   │   ├── forgot.cfm
-│   │   └── forgot.css
-│   │
-│   ├── home page/
-│   │   ├── home.cfm
-│   │   ├── home.css
-│   │   └── home.js
-│   │
-│   ├── login/
-│   │   ├── login.cfm
-│   │   ├── login.css
-│   │   └── login.js
-│   │
-│   ├── logout/
-│   │   └── logout.cfm
-│   │
-│   ├── profile/
-│   │   ├── profile.cfm
-│   │   └── profile.css
-│   │
-│   ├── registration/
-│   │   ├── register.cfm
-│   │   └── register.css
-│   │
-│   ├── requests/
-│   │   ├── delete_request/
-│   │   │   └── delete.cfm
-│   │   │
-│   │   ├── edit_request/
-│   │   │   ├── edit.cfm
-│   │   │   └── edit.css
-│   │   │
-│   │   ├── request_report/
-│   │   │   ├── request_report.cfm
-│   │   │   └── request_report.css
-│   │   │
-│   │   ├── submit_request/
-│   │   │   ├── submit_request.cfm
-│   │   │   ├── submit_request.css
-│   │   │   └── submit_request.js
-│   │   │
-│   │   ├── update_request/
-│   │   │   └── update.cfm
-│   │   │
-│   │   └── view_requests/
-│   │       ├── view_requests.cfm
-│   │       └── view_requests.css
-│   │
-│   └── user registrations/
-│       ├── user.cfm
-│       └── user.css
-│
-├── styles/                        # Common shared styles
-│   └── common.css
-│
-├── uploads/                       # File uploads
+## Features in This Version
+- Implemented password validation with special characters
+- Added password recovery via email OTP reset
+- Fixed folder path issue in URL display
+- Introduced index.cfm as main entry point
+- Added router.cfm to include all cfm files
+- Added controller.cfc to manage functions
+- Completed development of all department modules
+- Refactored code: moved inline JS & CSS to separate files
+- Implemented jQuery pagination (single record per request, hide/show pages)
+- Set downloads to open in a new page
+- Created structured folders for each page like headers, footers, HTML, CSS separated
+- Added local logging with cflog
+- Configured data source in onapplicationstart
+- Implemented session management on all pages

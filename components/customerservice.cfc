@@ -1,19 +1,20 @@
 <cfcomponent>
 
     <!-- Add Customer -->
-    <cffunction name="addCustomer" access="public" returnType="void">
-        <cfargument name="name" required="true" type="string">
-        <cfargument name="email" required="true" type="string">
-        <cfargument name="phone" required="true" type="string">
-        
-        <cfquery datasource="#application.datasource#">
+   <cffunction name="addCustomer" access="public" returntype="any">
+        <cfargument name="info" type="struct" required="true">
+
+        <cfset local.custid = 0>
+        <cfquery datasource="#application.datasource#" result="res">
             INSERT INTO customers (name, email, phone)
             VALUES (
-                <cfqueryparam value="#arguments.name#" cfsqltype="cf_sql_varchar">,
-                <cfqueryparam value="#arguments.email#" cfsqltype="cf_sql_varchar">,
-                <cfqueryparam value="#arguments.phone#" cfsqltype="cf_sql_varchar">
+                <cfqueryparam value="#arguments.info.name#" cfsqltype="cf_sql_varchar">,
+                <cfqueryparam value="#arguments.info.email#" cfsqltype="cf_sql_varchar">,
+                <cfqueryparam value="#arguments.info.phone#" cfsqltype="cf_sql_varchar">
             )
         </cfquery>
+        <cfset local.custid = res.GENERATEDKEY>
+        <cfreturn local.custid>
     </cffunction>
 
     <!-- Update Customer -->
